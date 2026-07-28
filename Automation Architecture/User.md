@@ -1,0 +1,1 @@
+User sends the Prompt to [[Orchestrator]] and is the **Director**: the final approval authority and the endpoint for [[Escalation]]. Accepted, gate-verified output and any unresolved [[Flag]] surface here — this is what closes the loop back to a human.

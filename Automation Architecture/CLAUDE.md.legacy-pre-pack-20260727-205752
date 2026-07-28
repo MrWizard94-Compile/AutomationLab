@@ -1,0 +1,49 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What this is
+
+This is an **Obsidian vault**, not a codebase. There is no build, test, or lint step — the
+"source" is Markdown prose. Each note is one node in a design for a multi-agent automation
+system, and the architecture lives in the `[[wiki-link]]` graph between notes (view it with
+Obsidian's Graph plugin, which is enabled). Editing here means refining a specification, not
+shipping executable code.
+
+When asked to "implement," "wire up," or "fix" something, clarify whether the request targets
+the *spec* (these notes) or a future external codebase the spec describes — they are different
+artifacts.
+
+## Architecture being specified
+
+A reviewed agent pipeline. Data flows:
+
+```
+User ──prompt──▶ Orchestrator ──work orders──▶ Executor ──output──▶ AST_LSP
+                      ▲                            ▲                    │
+                      │                            └──flags/revisions───┤
+                      └──────────accepted output───────────────────────┘
+```
+
+Roles (one note each, all cross-linked):
+
+- **Orchestrator** — the hub. Receives the user prompt, issues work orders, and receives
+  accepted output back from the reviewer.
+- **Executor** — does the work and emits output for review.
+- **AST_LSP** — the QA gate. Reviews Executor output, flags issues back to the Executor for
+  revision, and passes accepted output up to the Orchestrator (the Executor⇄AST_LSP loop).
+- **REL** — memory for the Orchestrator.
+- **Smart Library** — cognition for the Orchestrator.
+- **Asset Converter** — a tool used by the Executor.
+
+`MCP/` is an empty placeholder directory (intended for Model Context Protocol material).
+
+## Conventions
+
+- **Link, don't orphan.** Every component note connects to its neighbors with `[[Note Name]]`.
+  When you add a node, link it both directions so it appears in the graph and in backlinks.
+  Obsidian links match the file's base name (no `.md`, no path), e.g. `[[Smart Library]]`.
+- **One concept per note.** Notes here are terse, single-purpose statements of a component's
+  responsibility. Keep additions in that voice rather than expanding a note into a catch-all.
+- **Leave `.obsidian/` alone.** It is app/workspace config (enabled plugins, appearance,
+  layout) managed by Obsidian — don't hand-edit it to drive content changes.

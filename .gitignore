@@ -1,0 +1,7 @@
+# Personal Obsidian layout and credentials are local-only.
+**/.obsidian/workspace.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
