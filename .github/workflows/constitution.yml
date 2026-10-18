@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: MrWizard94-Compile/Agents-Constitution
-          ref: 89f8771df5a6fa8627cb9576afca1eefd0486d27
+          ref: 0010a8353b00754fad31a30ed24327d3b6d05425
           path: constitution
           persist-credentials: false
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1

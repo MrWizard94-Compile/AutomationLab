@@ -7,8 +7,8 @@ Accepted `main` of
 is the single editable source of constitutional law. Root and nested entries
 load `wpai-constitution`; no local directory is an alternate law source.
 
-This dated CI pin is accepted v6.16.3,
-`89f8771df5a6fa8627cb9576afca1eefd0486d27`. New invocations resolve and freeze
+This dated CI pin is accepted v6.16.4,
+`0010a8353b00754fad31a30ed24327d3b6d05425`. New invocations resolve and freeze
 accepted source using the skill; this pin is not permanently current law.
 The ongoing consolidation invocation retains its earlier v6.16.2 freeze.
 
@@ -52,3 +52,9 @@ No model, external agent, service, memory seeding, port workload, Obsidian plugi
 publication or spending operation is run by these checks. This adoption does
 not verify the historical transcript's provider/model claims, an implemented
 runtime, every client's instruction reload, deployment or physical acceptance.
+
+The first two-OS run exposed four inventory failures in accepted v6.16.3 on
+Windows. The source defect was reproduced with an actual Windows short-path
+alias and repaired through canonical PR #39; this project did not skip the
+cohort, relax assertions or vendor a local fix. The pin above is the accepted
+repair whose four Python/OS source cohorts and required aggregate passed.
