@@ -1,4 +1,5 @@
 # Personal Obsidian layout and credentials are local-only.
+__pycache__/
 **/.obsidian/workspace.json
 .env
 .env.*
